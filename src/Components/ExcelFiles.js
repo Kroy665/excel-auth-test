@@ -13,7 +13,7 @@ function ExcelFiles() {
 
     const onFileChange = (e) => {
         setFile(e.target.files[0]);
-        console.log(e.target.files[0]);
+        // console.log(e.target.files[0]);
     };
     useEffect(() => {
         const accessToken = localStorage.getItem("excelAccessToken");
@@ -29,7 +29,7 @@ function ExcelFiles() {
                 const files = await axios.get(url, config);
                 setAllFiles(files.data);
                 setSelectedFile(files.data[0]);
-                console.log(files);
+                // console.log(files);
             } catch (error) {
                 alert("No File Found");
             }
@@ -49,7 +49,7 @@ function ExcelFiles() {
                     },
                 };
                 const result = await axios.post(url, formData, config);
-                console.log(result);
+                // console.log(result);
                 alert("Upload successful");
                 setReload(reload + 1);
                 // setFile(null)
@@ -65,7 +65,7 @@ function ExcelFiles() {
         if (e.target.value !== "none") {
             var fileId = e.target.value.slice(8, -5);
             setSelectedFile(fileId);
-            console.log(e.target.value);
+            // console.log(e.target.value);
             setRender(true);
         } else {
             setRender(false);

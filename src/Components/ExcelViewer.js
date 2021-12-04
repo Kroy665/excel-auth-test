@@ -64,7 +64,7 @@ function ExcelViewer(props) {
                 const csvData = XLSX.utils.sheet_to_csv(ws, { header: 1 });
                 const data = convertToJson(csvData);
                 setFileData(data);
-                console.log(ws);
+                // console.log(ws);
             };
             reader.readAsBinaryString(file);
             setOnOpen(true);
@@ -159,7 +159,7 @@ function ExcelViewer(props) {
                 type: fileType,
             });
 
-            console.log(xlsxFile);
+            // console.log(xlsxFile);
             // console.log(props.fileId)
             const updateFile = async () => {
                 try {
@@ -173,7 +173,7 @@ function ExcelViewer(props) {
                         },
                     };
                     const result = await axios.post(url, formData, config);
-                    console.log(result);
+                    // console.log(result);
                     alert("Update successful");
                 } catch (error) {
                     alert(error.message);
