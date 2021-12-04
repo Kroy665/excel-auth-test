@@ -12,7 +12,7 @@ function Register() {
         setUserData({ ...userData, [e.target.name]: e.target.value });
     };
     const onSubmit = () => {
-        console.log(process.env.REACT_APP_API_URL);
+        // console.log(process.env.REACT_APP_API_URL);
         if (userData.email !== "" && userData.password !== "") {
             const sendUserData = async () => {
                 try {
@@ -20,7 +20,7 @@ function Register() {
                         `${process.env.REACT_APP_API_URL}/auth/register`,
                         userData
                     );
-                    console.log(result);
+                    // console.log(result);
                     if (result.status === 200) {
                         localStorage.setItem(
                             "excelAccessToken",
